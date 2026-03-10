@@ -3,263 +3,162 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- PRIMARY SEO -->
   <title>MST AlgoQuant — MQL4 & MQL5 Expert Advisor Developer | MetaTrader</title>
   <meta name="description" content="Custom Expert Advisors, MQL4/MQL5 indicators and algorithmic trading strategies for MetaTrader 4 & 5. Professional freelance MQL developer available worldwide." />
   <meta name="keywords" content="MQL4 developer, MQL5 developer, Expert Advisor, EA developer, MetaTrader 4, MetaTrader 5, algorithmic trading, algo trading, custom indicator, trading bot, freelance MQL" />
   <meta name="author" content="MST AlgoQuant" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://mstalgoquant.github.io/" />
-
-  <!-- HREFLANG -->
   <link rel="alternate" hreflang="tr" href="https://mstalgoquant.github.io/?lang=tr" />
   <link rel="alternate" hreflang="en" href="https://mstalgoquant.github.io/?lang=en" />
   <link rel="alternate" hreflang="nl" href="https://mstalgoquant.github.io/?lang=nl" />
   <link rel="alternate" hreflang="de" href="https://mstalgoquant.github.io/?lang=de" />
   <link rel="alternate" hreflang="fr" href="https://mstalgoquant.github.io/?lang=fr" />
   <link rel="alternate" hreflang="x-default" href="https://mstalgoquant.github.io/" />
-
-  <!-- OPEN GRAPH -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://mstalgoquant.github.io/" />
   <meta property="og:title" content="MST AlgoQuant — MQL4 & MQL5 Expert Advisor Developer" />
   <meta property="og:description" content="Custom Expert Advisors, indicators and algorithmic trading strategies for MetaTrader 4 & 5." />
   <meta property="og:locale" content="en_US" />
-
-  <!-- TWITTER -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="MST AlgoQuant — MQL4 & MQL5 Developer" />
   <meta name="twitter:description" content="Custom Expert Advisors & indicators for MetaTrader 4 & 5." />
-
-  <!-- SCHEMA.ORG -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "MST AlgoQuant",
-    "description": "Custom MQL4 and MQL5 Expert Advisor development, custom indicators and algorithmic trading strategy consulting.",
-    "url": "https://mstalgoquant.github.io/",
-    "areaServed": "Worldwide",
-    "availableLanguage": ["Turkish","English","Dutch","German","French"],
-    "serviceType": ["Expert Advisor Development","MQL4 Programming","MQL5 Programming","Custom Indicator Development","Algorithmic Trading Consulting"]
-  }
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"MST AlgoQuant","description":"Custom MQL4 and MQL5 Expert Advisor development, custom indicators and algorithmic trading strategy consulting.","url":"https://mstalgoquant.github.io/","areaServed":"Worldwide","availableLanguage":["Turkish","English","Dutch","German","French"],"serviceType":["Expert Advisor Development","MQL4 Programming","MQL5 Programming","Custom Indicator Development","Algorithmic Trading Consulting"]}
   </script>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --bg: #060a10;
-      --surface: #0d1520;
-      --border: #1a2a40;
-      --accent: #00e5ff;
-      --accent2: #7b61ff;
-      --text: #e8f0fe;
-      --muted: #5a7a9a;
-      --card: #0a1828;
+      --bg:#060a10; --surface:#0d1520; --border:#1a2a40;
+      --accent:#00e5ff; --accent2:#7b61ff;
+      --text:#e8f0fe; --muted:#5a7a9a; --card:#0a1828;
     }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    body::before{content:'';position:fixed;inset:0;
+      background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);
+      background-size:60px 60px;pointer-events:none;z-index:0;}
+    body::after{content:'';position:fixed;inset:0;
+      background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.06) 2px,rgba(0,0,0,0.06) 4px);
+      pointer-events:none;z-index:0;}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-weight: 300;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image:
-        linear-gradient(rgba(0,229,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,229,255,0.03) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none; z-index: 0;
-    }
-
-    body::after {
-      content: '';
-      position: fixed; inset: 0;
-      background: repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.06) 2px,rgba(0,0,0,0.06) 4px);
-      pointer-events: none; z-index: 0;
-    }
-
-    /* WRAP */
-    .wrap {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 2.5rem;
-    }
+    .wrap{max-width:1160px;margin:0 auto;padding:0 2.5rem;}
 
     /* NAV */
-    nav {
-      position: fixed; top: 0; width: 100%;
-      z-index: 100;
-      background: rgba(6,10,16,0.88);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    nav .wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 1.1rem;
-      padding-bottom: 1.1rem;
-    }
-
-    .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.35rem; letter-spacing: -0.02em; }
-    .logo span { color: var(--accent); }
-
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.82rem; letter-spacing: 0.09em; text-transform: uppercase; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--accent); }
-
-    .lang-switcher { display: flex; gap: 0.35rem; }
-    .lang-btn {
-      background: none; border: 1px solid var(--border); color: var(--muted);
-      padding: 0.28rem 0.65rem; font-size: 0.72rem; font-family: 'Space Mono', monospace;
-      cursor: pointer; border-radius: 3px; transition: all 0.2s;
-    }
-    .lang-btn:hover, .lang-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(0,229,255,0.06); }
+    nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(6,10,16,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+    nav .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:1.1rem;padding-bottom:1.1rem;}
+    .logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.35rem;letter-spacing:-0.02em;text-decoration:none;color:var(--text);}
+    .logo span{color:var(--accent);}
+    .nav-links{display:flex;gap:2.5rem;list-style:none;}
+    .nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;letter-spacing:0.09em;text-transform:uppercase;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--accent);}
+    .lang-switcher{display:flex;gap:0.35rem;}
+    .lang-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;}
+    .lang-btn:hover,.lang-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(0,229,255,0.06);}
 
     /* HERO */
-    .hero {
-      position: relative; min-height: 100vh;
-      display: flex; align-items: center;
-      z-index: 1; padding-top: 5rem;
-    }
-    .hero .wrap { display: flex; align-items: center; justify-content: space-between; gap: 4rem; width: 100%; }
-    .hero-left { flex: 1; }
-
-    .hero-label {
-      font-family: 'Space Mono', monospace; font-size: 0.72rem;
-      color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase;
-      margin-bottom: 1.4rem;
-      opacity: 0; animation: fadeUp 0.8s 0.2s forwards;
-    }
-    .hero h1 {
-      font-family: 'Syne', sans-serif; font-weight: 800;
-      font-size: clamp(3.2rem, 7vw, 6.5rem); line-height: 0.95; letter-spacing: -0.03em;
-      margin-bottom: 1.8rem;
-      opacity: 0; animation: fadeUp 0.8s 0.4s forwards;
-    }
-    .hero h1 .accent { color: var(--accent); }
-    .hero h1 .accent2 { color: var(--accent2); }
-
-    .hero-sub {
-      font-size: 1rem; color: var(--muted); max-width: 500px; line-height: 1.75;
-      margin-bottom: 2.5rem;
-      opacity: 0; animation: fadeUp 0.8s 0.6s forwards;
-    }
-    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.8s 0.8s forwards; }
-
-    .btn-primary {
-      background: var(--accent); color: #060a10; padding: 0.85rem 2rem;
-      font-family: 'Space Mono', monospace; font-size: 0.82rem; font-weight: 700;
-      letter-spacing: 0.05em; text-decoration: none; border-radius: 3px; transition: all 0.2s; display: inline-block;
-    }
-    .btn-primary:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 0 30px rgba(0,229,255,0.35); }
-
-    .btn-secondary {
-      border: 1px solid var(--border); color: var(--text); padding: 0.85rem 2rem;
-      font-family: 'Space Mono', monospace; font-size: 0.82rem; letter-spacing: 0.05em;
-      text-decoration: none; border-radius: 3px; transition: all 0.2s; display: inline-block;
-    }
-    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-
-    .hero-right {
-      display: flex; flex-direction: column; gap: 1rem; flex-shrink: 0;
-      opacity: 0; animation: fadeIn 1s 1.2s forwards;
-    }
-    .ticker-item {
-      background: var(--card); border: 1px solid var(--border); border-left: 2px solid var(--accent);
-      padding: 0.8rem 1.4rem; font-family: 'Space Mono', monospace; font-size: 0.75rem; min-width: 180px;
-    }
-    .ticker-label { color: var(--muted); font-size: 0.62rem; margin-bottom: 0.25rem; letter-spacing: 0.1em; }
-    .ticker-val { color: var(--accent); }
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;z-index:1;padding-top:5rem;}
+    .hero .wrap{display:flex;align-items:center;justify-content:space-between;gap:4rem;width:100%;}
+    .hero-left{flex:1;}
+    .hero-label{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.4rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards;}
+    .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(3.2rem,7vw,6.5rem);line-height:0.95;letter-spacing:-0.03em;margin-bottom:1.8rem;opacity:0;animation:fadeUp 0.8s 0.4s forwards;}
+    .hero h1 .accent{color:var(--accent);}
+    .hero h1 .accent2{color:var(--accent2);}
+    .hero-sub{font-size:1rem;color:var(--muted);max-width:500px;line-height:1.75;margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.8s 0.6s forwards;}
+    .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.8s forwards;}
+    .btn-primary{background:var(--accent);color:#060a10;padding:0.85rem 2rem;font-family:'Space Mono',monospace;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;text-decoration:none;border-radius:3px;transition:all 0.2s;display:inline-block;}
+    .btn-primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 0 30px rgba(0,229,255,0.35);}
+    .btn-secondary{border:1px solid var(--border);color:var(--text);padding:0.85rem 2rem;font-family:'Space Mono',monospace;font-size:0.82rem;letter-spacing:0.05em;text-decoration:none;border-radius:3px;transition:all 0.2s;display:inline-block;}
+    .btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+    .hero-right{display:flex;flex-direction:column;gap:1rem;flex-shrink:0;opacity:0;animation:fadeIn 1s 1.2s forwards;}
+    .ticker-item{background:var(--card);border:1px solid var(--border);border-left:2px solid var(--accent);padding:0.8rem 1.4rem;font-family:'Space Mono',monospace;font-size:0.75rem;min-width:180px;}
+    .ticker-label{color:var(--muted);font-size:0.62rem;margin-bottom:0.25rem;letter-spacing:0.1em;}
+    .ticker-val{color:var(--accent);}
 
     /* SECTIONS */
-    section { position: relative; z-index: 1; padding: 6rem 0; }
-
-    .section-label {
-      font-family: 'Space Mono', monospace; font-size: 0.68rem;
-      color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.7rem;
-    }
-    .section-title {
-      font-family: 'Syne', sans-serif; font-weight: 800;
-      font-size: clamp(2rem, 4.5vw, 3.2rem); letter-spacing: -0.02em; margin-bottom: 3rem;
-    }
+    section{position:relative;z-index:1;padding:6rem 0;}
+    .section-label{font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.7rem;}
+    .section-title{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:-0.02em;margin-bottom:3rem;}
 
     /* SERVICES */
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1.5px; background: var(--border); border: 1px solid var(--border);
-    }
-    .service-card {
-      background: var(--card); padding: 2.2rem;
-      transition: background 0.3s; position: relative; overflow: hidden;
-    }
-    .service-card::before {
-      content: ''; position: absolute; top: 0; left: 0;
-      width: 0; height: 2px; background: var(--accent); transition: width 0.4s;
-    }
-    .service-card:hover { background: #0f1e30; }
-    .service-card:hover::before { width: 100%; }
-    .service-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
-    .service-title { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 1.1rem; margin-bottom: 0.7rem; }
-    .service-desc { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--border);border:1px solid var(--border);}
+    .service-card{background:var(--card);padding:2.2rem;transition:background 0.3s;position:relative;overflow:hidden;}
+    .service-card::before{content:'';position:absolute;top:0;left:0;width:0;height:2px;background:var(--accent);transition:width 0.4s;}
+    .service-card:hover{background:#0f1e30;}
+    .service-card:hover::before{width:100%;}
+    .service-icon{font-size:1.8rem;margin-bottom:1rem;display:block;}
+    .service-title{font-family:'Syne',sans-serif;font-weight:600;font-size:1.1rem;margin-bottom:0.7rem;}
+    .service-desc{color:var(--muted);font-size:0.88rem;line-height:1.7;}
 
     /* ABOUT */
-    #about { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-    .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .about-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1.1rem; font-size: 0.92rem; }
-    .tech-list { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
-    .tech-tag { font-family: 'Space Mono', monospace; font-size: 0.72rem; border: 1px solid var(--border); padding: 0.35rem 0.9rem; color: var(--muted); }
-
-    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-    .stat-item { border: 1px solid var(--border); padding: 1.4rem; background: var(--card); }
-    .stat-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.2rem; color: var(--accent); line-height: 1; margin-bottom: 0.35rem; }
-    .stat-label { color: var(--muted); font-size: 0.78rem; letter-spacing: 0.05em; }
+    #about{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+    .about-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+    .about-text p{color:var(--muted);line-height:1.8;margin-bottom:1.1rem;font-size:0.92rem;}
+    .tech-list{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem;}
+    .tech-tag{font-family:'Space Mono',monospace;font-size:0.72rem;border:1px solid var(--border);padding:0.35rem 0.9rem;color:var(--muted);}
+    .stats{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+    .stat-item{border:1px solid var(--border);padding:1.4rem;background:var(--card);}
+    .stat-num{font-family:'Syne',sans-serif;font-weight:800;font-size:2.2rem;color:var(--accent);line-height:1;margin-bottom:0.35rem;}
+    .stat-label{color:var(--muted);font-size:0.78rem;letter-spacing:0.05em;}
 
     /* CONTACT */
-    .contact-inner { max-width: 680px; margin: 0 auto; text-align: center; }
-    .contact-desc { color: var(--muted); margin-bottom: 2.5rem; font-size: 0.92rem; line-height: 1.7; }
-    .contact-methods { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .contact-card {
-      background: var(--card); border: 1px solid var(--border);
-      padding: 1.4rem 1.8rem; text-align: left; min-width: 180px; transition: border-color 0.2s;
-    }
-    .contact-card:hover { border-color: var(--accent); }
-    .contact-card-label { font-family: 'Space Mono', monospace; font-size: 0.62rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.35rem; }
-    .contact-card-val { font-size: 0.9rem; color: var(--text); }
+    .contact-inner{max-width:720px;margin:0 auto;text-align:center;}
+    .contact-desc{color:var(--muted);margin-bottom:2.5rem;font-size:0.92rem;line-height:1.7;}
+
+    /* SOCIAL LINKS ROW */
+    .social-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;}
+    .social-card{background:var(--card);border:1px solid var(--border);padding:1.2rem 1.8rem;display:flex;align-items:center;gap:0.8rem;text-decoration:none;color:var(--text);transition:border-color 0.2s;min-width:160px;}
+    .social-card:hover{border-color:var(--accent);}
+    .social-card svg{flex-shrink:0;}
+    .social-card-label{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;}
+    .social-card-val{font-size:0.88rem;color:var(--text);}
+    .social-card.disabled{opacity:0.45;cursor:default;pointer-events:none;}
+
+    /* CONTACT FORM */
+    .contact-form{text-align:left;background:var(--card);border:1px solid var(--border);padding:2.5rem;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
+    .form-group{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem;}
+    .form-group label{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;}
+    .form-group input,
+    .form-group textarea,
+    .form-group select{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:0.75rem 1rem;font-family:'Inter',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s;border-radius:2px;width:100%;}
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus{border-color:var(--accent);}
+    .form-group textarea{resize:vertical;min-height:120px;}
+    .form-group select option{background:var(--bg);}
+    .form-honeypot{display:none;}
+    .btn-send{background:var(--accent);color:#060a10;padding:0.9rem 2.2rem;font-family:'Space Mono',monospace;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;border:none;cursor:pointer;border-radius:3px;transition:all 0.2s;width:100%;}
+    .btn-send:hover{background:#fff;box-shadow:0 0 30px rgba(0,229,255,0.35);}
+    .form-status{margin-top:1rem;font-family:'Space Mono',monospace;font-size:0.8rem;text-align:center;min-height:1.2rem;}
+    .form-status.success{color:#00ff88;}
+    .form-status.error{color:#ff6b6b;}
 
     /* FOOTER */
-    footer { position: relative; z-index: 1; border-top: 1px solid var(--border); }
-    footer .wrap { display: flex; justify-content: space-between; align-items: center; padding-top: 1.8rem; padding-bottom: 1.8rem; }
-    .footer-copy { font-family: 'Space Mono', monospace; font-size: 0.68rem; color: var(--muted); }
+    footer{position:relative;z-index:1;border-top:1px solid var(--border);}
+    footer .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:1.8rem;padding-bottom:1.8rem;}
+    .footer-copy{font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--muted);}
 
     /* ANIMATIONS */
-    @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 
     /* RESPONSIVE */
-    @media (max-width: 1024px) {
-      .services-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 900px) {
-      .wrap { padding: 0 1.5rem; }
-      .nav-links { display: none; }
-      .hero .wrap { flex-direction: column; gap: 2rem; }
-      .hero-right { display: none; }
-      section { padding: 4rem 0; }
-      .about-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      footer .wrap { flex-direction: column; gap: 1rem; text-align: center; }
+    @media(max-width:1024px){.services-grid{grid-template-columns:1fr;}}
+    @media(max-width:900px){
+      .wrap{padding:0 1.5rem;}
+      .nav-links{display:none;}
+      .hero .wrap{flex-direction:column;gap:2rem;}
+      .hero-right{display:none;}
+      section{padding:4rem 0;}
+      .about-inner{grid-template-columns:1fr;gap:2.5rem;}
+      .form-row{grid-template-columns:1fr;}
+      footer .wrap{flex-direction:column;gap:1rem;text-align:center;}
     }
   </style>
 </head>
@@ -268,7 +167,7 @@
 <!-- NAV -->
 <nav>
   <div class="wrap">
-    <div class="logo">MST <span>AlgoQuant</span></div>
+    <a href="#top" class="logo">MST <span>AlgoQuant</span></a>
     <ul class="nav-links">
       <li><a href="#services" data-i18n="nav.services">Services</a></li>
       <li><a href="#about" data-i18n="nav.about">About</a></li>
@@ -285,11 +184,11 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="top">
   <div class="wrap">
     <div class="hero-left">
       <p class="hero-label" data-i18n="hero.label">// MQL4 · MQL5 · MetaTrader Development</p>
-      <h1 aria-label="MST AlgoQuant — MQL4 MQL5 Expert Advisor Developer">
+      <h1>
         <span data-i18n="hero.line1">Algorithmic</span><br>
         <span class="accent" data-i18n="hero.line2">Trading</span><br>
         <span class="accent2" data-i18n="hero.line3">Systems.</span>
@@ -362,22 +261,10 @@
         </div>
       </div>
       <div class="stats">
-        <div class="stat-item">
-          <div class="stat-num">MT4</div>
-          <div class="stat-label" data-i18n="stat1">Platform Support</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">MT5</div>
-          <div class="stat-label" data-i18n="stat2">Platform Support</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">5</div>
-          <div class="stat-label" data-i18n="stat3">Languages</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">100%</div>
-          <div class="stat-label" data-i18n="stat4">Custom Code</div>
-        </div>
+        <div class="stat-item"><div class="stat-num">MT4</div><div class="stat-label" data-i18n="stat1">Platform Support</div></div>
+        <div class="stat-item"><div class="stat-num">MT5</div><div class="stat-label" data-i18n="stat2">Platform Support</div></div>
+        <div class="stat-item"><div class="stat-num">5</div><div class="stat-label" data-i18n="stat3">Languages</div></div>
+        <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label" data-i18n="stat4">Custom Code</div></div>
       </div>
     </div>
   </div>
@@ -389,21 +276,78 @@
     <div class="contact-inner">
       <p class="section-label" data-i18n="contact.label">// Get In Touch</p>
       <h2 class="section-title" data-i18n="contact.title">Let's Work Together</h2>
-      <p class="contact-desc" data-i18n="contact.desc">Have a project in mind? Reach out and let's discuss your trading system requirements.</p>
-      <div class="contact-methods">
-        <div class="contact-card">
-          <div class="contact-card-label">Telegram</div>
-          <div class="contact-card-val" data-i18n="contact.soon">Coming soon</div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-label">E-mail</div>
-          <div class="contact-card-val" data-i18n="contact.soon">Coming soon</div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-card-label">MQL5 Market</div>
-          <div class="contact-card-val" data-i18n="contact.soon">Coming soon</div>
-        </div>
+      <p class="contact-desc" data-i18n="contact.desc">Have a project in mind? Reach out via the form or find me on social media.</p>
+
+      <!-- SOCIAL ROW -->
+      <div class="social-row">
+        <!-- EMAIL -->
+        <a href="mailto:mstalgoquant&#64;gmail&#46;com" class="social-card">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          <div>
+            <div class="social-card-label">E-mail</div>
+            <div class="social-card-val">mstalgoquant<br>@gmail.com</div>
+          </div>
+        </a>
+        <!-- TELEGRAM -->
+        <a href="#" class="social-card disabled" id="tg-card">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M21.4 2.3L2.1 9.7c-1.2.5-1.2 1.7-.2 2l4.8 1.5 1.9 5.7c.3.8 1 .9 1.5.4l2.7-2.5 5.3 3.9c1 .7 1.9.3 2.2-.9l3.5-15.5c.4-1.5-.5-2.3-1.4-1.9z"/></svg>
+          <div>
+            <div class="social-card-label">Telegram</div>
+            <div class="social-card-val" data-i18n="contact.soon">Coming soon</div>
+          </div>
+        </a>
+        <!-- INSTAGRAM -->
+        <a href="#" class="social-card disabled" id="ig-card">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="var(--accent)"/></svg>
+          <div>
+            <div class="social-card-label">Instagram</div>
+            <div class="social-card-val" data-i18n="contact.soon">Coming soon</div>
+          </div>
+        </a>
+        <!-- MQL5 -->
+        <a href="#" class="social-card disabled" id="mql-card">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <div>
+            <div class="social-card-label">MQL5 Market</div>
+            <div class="social-card-val" data-i18n="contact.soon">Coming soon</div>
+          </div>
+        </a>
       </div>
+
+      <!-- CONTACT FORM -->
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="form.name">Your Name</label>
+            <input type="text" id="f-name" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label data-i18n="form.email">Your Email</label>
+            <input type="email" id="f-email" autocomplete="email" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-i18n="form.subject">Subject</label>
+          <select id="f-subject">
+            <option value="" data-i18n="form.select">Select a service...</option>
+            <option value="Expert Advisor (EA) Development" data-i18n="s1.title">Expert Advisor (EA)</option>
+            <option value="Custom Indicator Development" data-i18n="s2.title">Custom Indicators</option>
+            <option value="Strategy Consulting" data-i18n="s3.title">Strategy Consulting</option>
+            <option value="Other" data-i18n="form.other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label data-i18n="form.message">Message</label>
+          <textarea id="f-message" placeholder="Describe your project..."></textarea>
+        </div>
+        <!-- HONEYPOT - spam koruması -->
+        <div class="form-honeypot">
+          <input type="text" id="f-honey" tabindex="-1" autocomplete="off" />
+        </div>
+        <button class="btn-send" id="btn-send" data-i18n="form.send">Send Message</button>
+        <div class="form-status" id="form-status"></div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -411,7 +355,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="wrap">
-    <div class="logo">MST <span>AlgoQuant</span></div>
+    <a href="#top" class="logo">MST <span>AlgoQuant</span></a>
     <div class="footer-copy">© 2025 MST AlgoQuant. All rights reserved.</div>
   </div>
 </footer>
@@ -422,8 +366,9 @@
 </div>
 
 <script>
+  /* ── i18n ── */
   const i18n = {
-    en: {
+    en:{
       "nav.services":"Services","nav.about":"About","nav.contact":"Contact",
       "hero.label":"// MQL4 · MQL5 · MetaTrader Development",
       "hero.line1":"Algorithmic","hero.line2":"Trading","hero.line3":"Systems.",
@@ -438,10 +383,13 @@
       "about.p2":"Whether you have a complete strategy or just an idea — I translate it into reliable, tested code that works in live markets.",
       "stat1":"Platform Support","stat2":"Platform Support","stat3":"Languages","stat4":"Custom Code",
       "contact.label":"// Get In Touch","contact.title":"Let's Work Together",
-      "contact.desc":"Have a project in mind? Reach out and let's discuss your trading system requirements.",
-      "contact.soon":"Coming soon"
+      "contact.desc":"Have a project in mind? Reach out via the form or find me on social media.",
+      "contact.soon":"Coming soon",
+      "form.name":"Your Name","form.email":"Your Email","form.subject":"Subject",
+      "form.select":"Select a service...","form.other":"Other","form.message":"Message","form.send":"Send Message",
+      "form.sending":"Sending...","form.ok":"✓ Message sent! I'll get back to you soon.","form.err":"Something went wrong. Please email directly."
     },
-    tr: {
+    tr:{
       "nav.services":"Hizmetler","nav.about":"Hakkımda","nav.contact":"İletişim",
       "hero.label":"// MQL4 · MQL5 · MetaTrader Geliştirme",
       "hero.line1":"Algoritmik","hero.line2":"Ticaret","hero.line3":"Sistemleri.",
@@ -456,10 +404,13 @@
       "about.p2":"Eksiksiz bir stratejiniz ya da sadece bir fikriniz olsun — onu canlı piyasalarda çalışan güvenilir, test edilmiş koda dönüştürüyorum.",
       "stat1":"Platform Desteği","stat2":"Platform Desteği","stat3":"Dil Desteği","stat4":"Özel Kod",
       "contact.label":"// İletişime Geç","contact.title":"Birlikte Çalışalım",
-      "contact.desc":"Aklınızda bir proje mi var? Ulaşın ve ticaret sistemi gereksinimlerinizi konuşalım.",
-      "contact.soon":"Yakında"
+      "contact.desc":"Aklınızda bir proje mi var? Form aracılığıyla ulaşın ya da sosyal medyadan bulun.",
+      "contact.soon":"Yakında",
+      "form.name":"Adınız","form.email":"E-posta Adresiniz","form.subject":"Konu",
+      "form.select":"Hizmet seçin...","form.other":"Diğer","form.message":"Mesajınız","form.send":"Mesaj Gönder",
+      "form.sending":"Gönderiliyor...","form.ok":"✓ Mesajınız iletildi! En kısa sürede dönüş yapacağım.","form.err":"Bir hata oluştu. Lütfen doğrudan e-posta gönderin."
     },
-    nl: {
+    nl:{
       "nav.services":"Diensten","nav.about":"Over","nav.contact":"Contact",
       "hero.label":"// MQL4 · MQL5 · MetaTrader Ontwikkeling",
       "hero.line1":"Algoritmisch","hero.line2":"Handels","hero.line3":"Systemen.",
@@ -474,28 +425,34 @@
       "about.p2":"Of u nu een complete strategie of alleen een idee heeft — ik vertaal het naar betrouwbare, geteste code die werkt in live markten.",
       "stat1":"Platform Ondersteuning","stat2":"Platform Ondersteuning","stat3":"Talen","stat4":"Aangepaste Code",
       "contact.label":"// Neem Contact Op","contact.title":"Laten We Samenwerken",
-      "contact.desc":"Heeft u een project in gedachten? Neem contact op en laten we uw vereisten bespreken.",
-      "contact.soon":"Binnenkort beschikbaar"
+      "contact.desc":"Heeft u een project in gedachten? Neem contact op via het formulier of vind mij op sociale media.",
+      "contact.soon":"Binnenkort beschikbaar",
+      "form.name":"Uw Naam","form.email":"Uw E-mail","form.subject":"Onderwerp",
+      "form.select":"Selecteer een dienst...","form.other":"Anders","form.message":"Bericht","form.send":"Verstuur Bericht",
+      "form.sending":"Verzenden...","form.ok":"✓ Bericht verzonden! Ik neem snel contact op.","form.err":"Er is iets misgegaan. Stuur een directe e-mail."
     },
-    de: {
+    de:{
       "nav.services":"Leistungen","nav.about":"Über mich","nav.contact":"Kontakt",
       "hero.label":"// MQL4 · MQL5 · MetaTrader Entwicklung",
       "hero.line1":"Algorithmische","hero.line2":"Handels","hero.line3":"Systeme.",
       "hero.sub":"Maßgeschneiderte Expert Advisors, Indikatoren und Handelsstrategien — präzise für MetaTrader 4 & 5 entwickelt.",
       "hero.cta1":"Angebot Anfordern","hero.cta2":"Leistungen Ansehen",
       "services.label":"// Was Ich Entwickle","services.title":"Leistungen",
-      "s1.title":"Expert Advisor (EA)","s1.desc":"Vollautomatische Handelsbots für MT4/MT5. Benutzerdefinierte Ein-/Ausstiegslogik, Risikomanagement und Multi-Paar-Unterstützung.",
+      "s1.title":"Expert Advisor (EA)","s1.desc":"Vollautomatische Handelsbots für MT4/MT5. Benutzerdefinierte Logik, Risikomanagement und Multi-Paar-Unterstützung.",
       "s2.title":"Benutzerdefinierte Indikatoren","s2.desc":"Maßgeschneiderte Indikatoren für Ihre Strategie. Oszillatoren, Overlays, Signalbenachrichtigungen und Dashboard-Panels.",
-      "s3.title":"Strategie-Beratung","s3.desc":"Verwandeln Sie Ihre Handelsidee in einen backtesteten Algorithmus. Vom Konzept bis zum Code — mit Dokumentation.",
+      "s3.title":"Strategie-Beratung","s3.desc":"Verwandeln Sie Ihre Handelsidee in einen backtesteten Algorithmus. Vom Konzept bis zum Code.",
       "about.label":"// Über Mich","about.title":"MST AlgoQuant",
       "about.p1":"Ich bin ein unabhängiger MQL-Entwickler spezialisiert auf algorithmische Handelssysteme für MetaTrader. Jedes Projekt wird von Grund auf neu und gut dokumentiert erstellt.",
       "about.p2":"Ob vollständige Strategie oder nur eine Idee — ich übersetze sie in zuverlässigen, getesteten Code.",
       "stat1":"Plattform-Support","stat2":"Plattform-Support","stat3":"Sprachen","stat4":"Eigener Code",
       "contact.label":"// Kontakt Aufnehmen","contact.title":"Lass Uns Zusammenarbeiten",
-      "contact.desc":"Haben Sie ein Projekt im Sinn? Melden Sie sich und lassen Sie uns Ihre Anforderungen besprechen.",
-      "contact.soon":"Demnächst verfügbar"
+      "contact.desc":"Haben Sie ein Projekt? Schreiben Sie mir über das Formular oder auf Social Media.",
+      "contact.soon":"Demnächst verfügbar",
+      "form.name":"Ihr Name","form.email":"Ihre E-Mail","form.subject":"Betreff",
+      "form.select":"Leistung auswählen...","form.other":"Sonstiges","form.message":"Nachricht","form.send":"Nachricht Senden",
+      "form.sending":"Wird gesendet...","form.ok":"✓ Nachricht gesendet! Ich melde mich bald.","form.err":"Etwas ist schiefgelaufen. Bitte senden Sie eine direkte E-Mail."
     },
-    fr: {
+    fr:{
       "nav.services":"Services","nav.about":"À propos","nav.contact":"Contact",
       "hero.label":"// MQL4 · MQL5 · Développement MetaTrader",
       "hero.line1":"Systèmes de","hero.line2":"Trading","hero.line3":"Algorithmique.",
@@ -503,60 +460,105 @@
       "hero.cta1":"Demander un Devis","hero.cta2":"Voir les Services",
       "services.label":"// Ce Que Je Développe","services.title":"Services",
       "s1.title":"Expert Advisor (EA)","s1.desc":"Robots de trading entièrement automatisés pour MT4/MT5. Logique personnalisée, gestion des risques et support multi-paires.",
-      "s2.title":"Indicateurs Personnalisés","s2.desc":"Indicateurs techniques sur mesure. Oscillateurs, overlays, alertes de signaux et panneaux de tableau de bord.",
-      "s3.title":"Conseil en Stratégie","s3.desc":"Transformez votre idée en algorithme backtesté et optimisé. Du concept au code — avec documentation complète.",
+      "s2.title":"Indicateurs Personnalisés","s2.desc":"Indicateurs techniques sur mesure. Oscillateurs, overlays, alertes et panneaux de tableau de bord.",
+      "s3.title":"Conseil en Stratégie","s3.desc":"Transformez votre idée en algorithme backtesté et optimisé. Du concept au code — avec documentation.",
       "about.label":"// À Propos","about.title":"MST AlgoQuant",
       "about.p1":"Je suis un développeur MQL indépendant spécialisé dans les systèmes de trading algorithmique pour MetaTrader. Chaque projet est construit from scratch, propre et bien documenté.",
       "about.p2":"Que vous ayez une stratégie complète ou juste une idée — je la traduis en code fiable qui fonctionne sur les marchés réels.",
       "stat1":"Support Plateforme","stat2":"Support Plateforme","stat3":"Langues","stat4":"Code Personnalisé",
       "contact.label":"// Prendre Contact","contact.title":"Travaillons Ensemble",
-      "contact.desc":"Vous avez un projet en tête ? Contactez-moi et discutons de vos besoins.",
-      "contact.soon":"Bientôt disponible"
+      "contact.desc":"Vous avez un projet ? Contactez-moi via le formulaire ou sur les réseaux sociaux.",
+      "contact.soon":"Bientôt disponible",
+      "form.name":"Votre Nom","form.email":"Votre E-mail","form.subject":"Sujet",
+      "form.select":"Choisir un service...","form.other":"Autre","form.message":"Message","form.send":"Envoyer le Message",
+      "form.sending":"Envoi en cours...","form.ok":"✓ Message envoyé ! Je vous répondrai bientôt.","form.err":"Une erreur est survenue. Veuillez envoyer un e-mail directement."
     }
   };
 
-  const pageTitles = {
-    en:'MST AlgoQuant — MQL4 & MQL5 Expert Advisor Developer | MetaTrader',
-    tr:'MST AlgoQuant — MQL4 & MQL5 Expert Advisor Geliştirici | MetaTrader',
-    nl:'MST AlgoQuant — MQL4 & MQL5 Expert Advisor Ontwikkelaar | MetaTrader',
-    de:'MST AlgoQuant — MQL4 & MQL5 Expert Advisor Entwickler | MetaTrader',
-    fr:'MST AlgoQuant — Développeur Expert Advisor MQL4 & MQL5 | MetaTrader'
-  };
+  const pageTitles={en:'MST AlgoQuant — MQL4 & MQL5 Expert Advisor Developer | MetaTrader',tr:'MST AlgoQuant — MQL4 & MQL5 Expert Advisor Geliştirici | MetaTrader',nl:'MST AlgoQuant — MQL4 & MQL5 Expert Advisor Ontwikkelaar | MetaTrader',de:'MST AlgoQuant — MQL4 & MQL5 Expert Advisor Entwickler | MetaTrader',fr:'MST AlgoQuant — Développeur Expert Advisor MQL4 & MQL5 | MetaTrader'};
+  const pageDescs={en:'Custom Expert Advisors, MQL4/MQL5 indicators and algorithmic trading strategies for MetaTrader 4 & 5.',tr:'MetaTrader 4 ve 5 için özel Expert Advisor ve algoritmik ticaret stratejileri.',nl:'Aangepaste Expert Advisors en MQL4/MQL5 indicatoren voor MetaTrader.',de:'Individuelle Expert Advisors und MQL4/MQL5 Indikatoren für MetaTrader.',fr:'Expert Advisors et indicateurs MQL4/MQL5 pour MetaTrader 4 & 5.'};
 
-  const pageDescs = {
-    en:'Custom Expert Advisors, MQL4/MQL5 indicators and algorithmic trading strategies for MetaTrader 4 & 5. Professional freelance MQL developer.',
-    tr:'MetaTrader 4 ve 5 için özel Expert Advisor, MQL4/MQL5 indikatör ve algoritmik ticaret stratejileri.',
-    nl:'Aangepaste Expert Advisors, MQL4/MQL5 indicatoren voor MetaTrader 4 & 5. Professionele freelance MQL-ontwikkelaar.',
-    de:'Individuelle Expert Advisors, MQL4/MQL5 Indikatoren für MetaTrader 4 & 5. Professioneller MQL-Entwickler.',
-    fr:'Expert Advisors et indicateurs MQL4/MQL5 pour MetaTrader 4 & 5. Développeur MQL freelance professionnel.'
-  };
+  let currentLang = 'en';
 
-  function detectLang() {
-    const code = (navigator.language || 'en').slice(0,2).toLowerCase();
-    return ['tr','en','nl','de','fr'].includes(code) ? code : 'en';
-  }
+  function detectLang(){const c=(navigator.language||'en').slice(0,2).toLowerCase();return['tr','en','nl','de','fr'].includes(c)?c:'en';}
 
-  function applyLang(lang) {
-    const dict = i18n[lang] || i18n.en;
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (dict[key]) el.textContent = dict[key];
+  function applyLang(lang){
+    currentLang = lang;
+    const dict=i18n[lang]||i18n.en;
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const k=el.getAttribute('data-i18n');
+      if(dict[k]) el.textContent=dict[k];
     });
-    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.lang === lang));
-    document.documentElement.lang = lang;
-    document.title = pageTitles[lang] || pageTitles.en;
-    const md = document.querySelector('meta[name="description"]');
-    if (md) md.setAttribute('content', pageDescs[lang] || pageDescs.en);
+    document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.toggle('active',btn.dataset.lang===lang));
+    document.documentElement.lang=lang;
+    document.title=pageTitles[lang]||pageTitles.en;
+    const md=document.querySelector('meta[name="description"]');
+    if(md) md.setAttribute('content',pageDescs[lang]||pageDescs.en);
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('mst_lang') || detectLang();
+  /* ── CONTACT FORM via Formspree ── */
+  document.addEventListener('DOMContentLoaded',()=>{
+    const saved=localStorage.getItem('mst_lang')||detectLang();
     applyLang(saved);
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => { localStorage.setItem('mst_lang', btn.dataset.lang); applyLang(btn.dataset.lang); });
+
+    document.querySelectorAll('.lang-btn').forEach(btn=>{
+      btn.addEventListener('click',()=>{localStorage.setItem('mst_lang',btn.dataset.lang);applyLang(btn.dataset.lang);});
     });
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => { e.preventDefault(); document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'}); });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const target=a.getAttribute('href');
+        if(target==='#top'){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});}
+        else{e.preventDefault();document.querySelector(target)?.scrollIntoView({behavior:'smooth'});}
+      });
+    });
+
+    /* FORM SUBMIT */
+    document.getElementById('btn-send').addEventListener('click', async()=>{
+      const dict=i18n[currentLang]||i18n.en;
+      const honey=document.getElementById('f-honey').value;
+      if(honey) return; // spam bot yakalandı
+
+      const name=document.getElementById('f-name').value.trim();
+      const email=document.getElementById('f-email').value.trim();
+      const subject=document.getElementById('f-subject').value;
+      const message=document.getElementById('f-message').value.trim();
+      const status=document.getElementById('form-status');
+      const btn=document.getElementById('btn-send');
+
+      if(!name||!email||!message){
+        status.textContent='⚠ Please fill in all required fields.';
+        status.className='form-status error';
+        return;
+      }
+
+      btn.textContent=dict['form.sending']||'Sending...';
+      btn.disabled=true;
+      status.textContent='';
+      status.className='form-status';
+
+      try{
+        const res=await fetch('https://formspree.io/f/xpwzgkvd',{
+          method:'POST',
+          headers:{'Content-Type':'application/json','Accept':'application/json'},
+          body:JSON.stringify({name,email,subject,message,_language:currentLang})
+        });
+        if(res.ok){
+          status.textContent=dict['form.ok']||'✓ Message sent!';
+          status.className='form-status success';
+          document.getElementById('f-name').value='';
+          document.getElementById('f-email').value='';
+          document.getElementById('f-subject').value='';
+          document.getElementById('f-message').value='';
+        } else {
+          throw new Error('fail');
+        }
+      } catch(e){
+        status.textContent=dict['form.err']||'Something went wrong.';
+        status.className='form-status error';
+      }
+      btn.textContent=dict['form.send']||'Send Message';
+      btn.disabled=false;
     });
   });
 </script>
