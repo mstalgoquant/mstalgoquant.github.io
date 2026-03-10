@@ -39,13 +39,8 @@
     *{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
     body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-weight:300;overflow-x:hidden;}
-
-    body::before{content:'';position:fixed;inset:0;
-      background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);
-      background-size:60px 60px;pointer-events:none;z-index:0;}
-    body::after{content:'';position:fixed;inset:0;
-      background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.06) 2px,rgba(0,0,0,0.06) 4px);
-      pointer-events:none;z-index:0;}
+    body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,229,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+    body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.06) 2px,rgba(0,0,0,0.06) 4px);pointer-events:none;z-index:0;}
 
     .wrap{max-width:1160px;margin:0 auto;padding:0 2.5rem;}
 
@@ -107,34 +102,40 @@
     .stat-label{color:var(--muted);font-size:0.78rem;letter-spacing:0.05em;}
 
     /* CONTACT */
-    .contact-inner{max-width:720px;margin:0 auto;text-align:center;}
+    .contact-inner{max-width:760px;margin:0 auto;text-align:center;}
     .contact-desc{color:var(--muted);margin-bottom:2.5rem;font-size:0.92rem;line-height:1.7;}
 
-    /* SOCIAL LINKS ROW */
-    .social-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;}
-    .social-card{background:var(--card);border:1px solid var(--border);padding:1.2rem 1.8rem;display:flex;align-items:center;gap:0.8rem;text-decoration:none;color:var(--text);transition:border-color 0.2s;min-width:160px;}
-    .social-card:hover{border-color:var(--accent);}
-    .social-card svg{flex-shrink:0;}
-    .social-card-label{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.2rem;}
-    .social-card-val{font-size:0.88rem;color:var(--text);}
-    .social-card.disabled{opacity:0.45;cursor:default;pointer-events:none;}
+    /* SOCIAL ROW — 3 kartlar yan yana eşit */
+    .social-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3rem;}
+
+    .social-card{
+      background:var(--card);border:1px solid var(--border);
+      padding:1.6rem 1.5rem;
+      display:flex;align-items:center;gap:1rem;
+      text-decoration:none;color:var(--text);
+      transition:border-color 0.25s, background 0.25s;
+      cursor:pointer;
+    }
+    .social-card:hover{border-color:var(--accent);background:#0f1e30;}
+    .social-card.disabled{opacity:0.4;cursor:default;pointer-events:none;}
+    .social-icon{flex-shrink:0;width:42px;height:42px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;border-radius:2px;}
+    .social-card:hover .social-icon{border-color:var(--accent);}
+    .social-card-label{font-family:'Space Mono',monospace;font-size:0.62rem;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:0.3rem;}
+    .social-card-val{font-size:0.9rem;color:var(--text);}
 
     /* CONTACT FORM */
     .contact-form{text-align:left;background:var(--card);border:1px solid var(--border);padding:2.5rem;}
     .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
     .form-group{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem;}
     .form-group label{font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--accent);letter-spacing:0.12em;text-transform:uppercase;}
-    .form-group input,
-    .form-group textarea,
-    .form-group select{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:0.75rem 1rem;font-family:'Inter',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s;border-radius:2px;width:100%;}
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus{border-color:var(--accent);}
+    .form-group input,.form-group textarea,.form-group select{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:0.75rem 1rem;font-family:'Inter',sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s;border-radius:2px;width:100%;}
+    .form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--accent);}
     .form-group textarea{resize:vertical;min-height:120px;}
     .form-group select option{background:var(--bg);}
     .form-honeypot{display:none;}
     .btn-send{background:var(--accent);color:#060a10;padding:0.9rem 2.2rem;font-family:'Space Mono',monospace;font-size:0.82rem;font-weight:700;letter-spacing:0.05em;border:none;cursor:pointer;border-radius:3px;transition:all 0.2s;width:100%;}
     .btn-send:hover{background:#fff;box-shadow:0 0 30px rgba(0,229,255,0.35);}
+    .btn-send:disabled{opacity:0.6;cursor:not-allowed;}
     .form-status{margin-top:1rem;font-family:'Space Mono',monospace;font-size:0.8rem;text-align:center;min-height:1.2rem;}
     .form-status.success{color:#00ff88;}
     .form-status.error{color:#ff6b6b;}
@@ -157,6 +158,7 @@
       .hero-right{display:none;}
       section{padding:4rem 0;}
       .about-inner{grid-template-columns:1fr;gap:2.5rem;}
+      .social-row{grid-template-columns:1fr;}
       .form-row{grid-template-columns:1fr;}
       footer .wrap{flex-direction:column;gap:1rem;text-align:center;}
     }
@@ -200,18 +202,9 @@
       </div>
     </div>
     <div class="hero-right">
-      <div class="ticker-item">
-        <div class="ticker-label">PLATFORM</div>
-        <div class="ticker-val">MT4 / MT5</div>
-      </div>
-      <div class="ticker-item">
-        <div class="ticker-label">LANGUAGE</div>
-        <div class="ticker-val">MQL4 / MQL5</div>
-      </div>
-      <div class="ticker-item">
-        <div class="ticker-label">STATUS</div>
-        <div class="ticker-val" style="color:#00ff88">● AVAILABLE</div>
-      </div>
+      <div class="ticker-item"><div class="ticker-label">PLATFORM</div><div class="ticker-val">MT4 / MT5</div></div>
+      <div class="ticker-item"><div class="ticker-label">LANGUAGE</div><div class="ticker-val">MQL4 / MQL5</div></div>
+      <div class="ticker-item"><div class="ticker-label">STATUS</div><div class="ticker-val" style="color:#00ff88">● AVAILABLE</div></div>
     </div>
   </div>
 </section>
@@ -251,12 +244,9 @@
         <p data-i18n="about.p1">I am an independent MQL developer specializing in algorithmic trading systems for MetaTrader platforms. Every project is built from scratch, clean and well-documented.</p>
         <p data-i18n="about.p2">Whether you have a complete strategy or just an idea — I translate it into reliable, tested code that works in live markets.</p>
         <div class="tech-list">
-          <span class="tech-tag">MQL4</span>
-          <span class="tech-tag">MQL5</span>
-          <span class="tech-tag">MetaTrader 4</span>
-          <span class="tech-tag">MetaTrader 5</span>
-          <span class="tech-tag">Strategy Tester</span>
-          <span class="tech-tag">Risk Management</span>
+          <span class="tech-tag">MQL4</span><span class="tech-tag">MQL5</span>
+          <span class="tech-tag">MetaTrader 4</span><span class="tech-tag">MetaTrader 5</span>
+          <span class="tech-tag">Strategy Tester</span><span class="tech-tag">Risk Management</span>
           <span class="tech-tag">Backtesting</span>
         </div>
       </div>
@@ -276,46 +266,48 @@
     <div class="contact-inner">
       <p class="section-label" data-i18n="contact.label">// Get In Touch</p>
       <h2 class="section-title" data-i18n="contact.title">Let's Work Together</h2>
-      <p class="contact-desc" data-i18n="contact.desc">Have a project in mind? Reach out via the form or find me on social media.</p>
+      <p class="contact-desc" data-i18n="contact.desc">Have a project in mind? Use the form below or reach out on social media.</p>
 
-      <!-- SOCIAL ROW -->
+      <!-- 3 SOCIAL CARDS -->
       <div class="social-row">
-        <!-- EMAIL -->
-        <a href="mailto:mstalgoquant&#64;gmail&#46;com" class="social-card">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+
+        <!-- EMAIL → form'a scroll -->
+        <div class="social-card" id="email-card" role="button" tabindex="0">
+          <div class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          </div>
           <div>
             <div class="social-card-label">E-mail</div>
-            <div class="social-card-val">mstalgoquant<br>@gmail.com</div>
+            <div class="social-card-val" data-i18n="contact.writeUs">Write to us</div>
           </div>
-        </a>
+        </div>
+
         <!-- TELEGRAM -->
-        <a href="#" class="social-card disabled" id="tg-card">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M21.4 2.3L2.1 9.7c-1.2.5-1.2 1.7-.2 2l4.8 1.5 1.9 5.7c.3.8 1 .9 1.5.4l2.7-2.5 5.3 3.9c1 .7 1.9.3 2.2-.9l3.5-15.5c.4-1.5-.5-2.3-1.4-1.9z"/></svg>
+        <div class="social-card disabled" id="tg-card">
+          <div class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M21.4 2.3L2.1 9.7c-1.2.5-1.2 1.7-.2 2l4.8 1.5 1.9 5.7c.3.8 1 .9 1.5.4l2.7-2.5 5.3 3.9c1 .7 1.9.3 2.2-.9l3.5-15.5c.4-1.5-.5-2.3-1.4-1.9z"/></svg>
+          </div>
           <div>
             <div class="social-card-label">Telegram</div>
             <div class="social-card-val" data-i18n="contact.soon">Coming soon</div>
           </div>
-        </a>
+        </div>
+
         <!-- INSTAGRAM -->
-        <a href="#" class="social-card disabled" id="ig-card">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="var(--accent)"/></svg>
+        <div class="social-card disabled" id="ig-card">
+          <div class="social-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="var(--accent)"/></svg>
+          </div>
           <div>
             <div class="social-card-label">Instagram</div>
             <div class="social-card-val" data-i18n="contact.soon">Coming soon</div>
           </div>
-        </a>
-        <!-- MQL5 -->
-        <a href="#" class="social-card disabled" id="mql-card">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          <div>
-            <div class="social-card-label">MQL5 Market</div>
-            <div class="social-card-val" data-i18n="contact.soon">Coming soon</div>
-          </div>
-        </a>
+        </div>
+
       </div>
 
       <!-- CONTACT FORM -->
-      <div class="contact-form">
+      <div class="contact-form" id="contact-form">
         <div class="form-row">
           <div class="form-group">
             <label data-i18n="form.name">Your Name</label>
@@ -338,10 +330,10 @@
         </div>
         <div class="form-group">
           <label data-i18n="form.message">Message</label>
-          <textarea id="f-message" placeholder="Describe your project..."></textarea>
+          <textarea id="f-message"></textarea>
         </div>
-        <!-- HONEYPOT - spam koruması -->
-        <div class="form-honeypot">
+        <!-- HONEYPOT spam koruması -->
+        <div class="form-honeypot" aria-hidden="true">
           <input type="text" id="f-honey" tabindex="-1" autocomplete="off" />
         </div>
         <button class="btn-send" id="btn-send" data-i18n="form.send">Send Message</button>
@@ -366,7 +358,6 @@
 </div>
 
 <script>
-  /* ── i18n ── */
   const i18n = {
     en:{
       "nav.services":"Services","nav.about":"About","nav.contact":"Contact",
@@ -383,11 +374,11 @@
       "about.p2":"Whether you have a complete strategy or just an idea — I translate it into reliable, tested code that works in live markets.",
       "stat1":"Platform Support","stat2":"Platform Support","stat3":"Languages","stat4":"Custom Code",
       "contact.label":"// Get In Touch","contact.title":"Let's Work Together",
-      "contact.desc":"Have a project in mind? Reach out via the form or find me on social media.",
-      "contact.soon":"Coming soon",
+      "contact.desc":"Have a project in mind? Use the form below or reach out on social media.",
+      "contact.soon":"Coming soon","contact.writeUs":"Write to us",
       "form.name":"Your Name","form.email":"Your Email","form.subject":"Subject",
       "form.select":"Select a service...","form.other":"Other","form.message":"Message","form.send":"Send Message",
-      "form.sending":"Sending...","form.ok":"✓ Message sent! I'll get back to you soon.","form.err":"Something went wrong. Please email directly."
+      "form.sending":"Sending...","form.ok":"✓ Message sent! I'll get back to you soon.","form.err":"Something went wrong. Please try again."
     },
     tr:{
       "nav.services":"Hizmetler","nav.about":"Hakkımda","nav.contact":"İletişim",
@@ -404,11 +395,11 @@
       "about.p2":"Eksiksiz bir stratejiniz ya da sadece bir fikriniz olsun — onu canlı piyasalarda çalışan güvenilir, test edilmiş koda dönüştürüyorum.",
       "stat1":"Platform Desteği","stat2":"Platform Desteği","stat3":"Dil Desteği","stat4":"Özel Kod",
       "contact.label":"// İletişime Geç","contact.title":"Birlikte Çalışalım",
-      "contact.desc":"Aklınızda bir proje mi var? Form aracılığıyla ulaşın ya da sosyal medyadan bulun.",
-      "contact.soon":"Yakında",
+      "contact.desc":"Aklınızda bir proje mi var? Aşağıdaki formu kullanın ya da sosyal medyadan ulaşın.",
+      "contact.soon":"Yakında","contact.writeUs":"Mesaj gönderin",
       "form.name":"Adınız","form.email":"E-posta Adresiniz","form.subject":"Konu",
       "form.select":"Hizmet seçin...","form.other":"Diğer","form.message":"Mesajınız","form.send":"Mesaj Gönder",
-      "form.sending":"Gönderiliyor...","form.ok":"✓ Mesajınız iletildi! En kısa sürede dönüş yapacağım.","form.err":"Bir hata oluştu. Lütfen doğrudan e-posta gönderin."
+      "form.sending":"Gönderiliyor...","form.ok":"✓ Mesajınız iletildi! En kısa sürede dönüş yapacağım.","form.err":"Bir hata oluştu. Lütfen tekrar deneyin."
     },
     nl:{
       "nav.services":"Diensten","nav.about":"Over","nav.contact":"Contact",
@@ -418,18 +409,18 @@
       "hero.cta1":"Offerte Aanvragen","hero.cta2":"Bekijk Diensten",
       "services.label":"// Wat Ik Bouw","services.title":"Diensten",
       "s1.title":"Expert Advisor (EA)","s1.desc":"Volledig geautomatiseerde handelsbots voor MT4/MT5. Aangepaste logica, risicobeheer en multi-paar ondersteuning.",
-      "s2.title":"Aangepaste Indicatoren","s2.desc":"Op maat gemaakte technische indicatoren. Oscillatoren, overlays, signaalwaarschuwingen en dashboardpanelen.",
+      "s2.title":"Aangepaste Indicatoren","s2.desc":"Op maat gemaakte indicatoren. Oscillatoren, overlays, signaalwaarschuwingen en dashboardpanelen.",
       "s3.title":"Strategie Consulting","s3.desc":"Zet uw handelsidee om in een geoptimaliseerd algoritme. Van concept tot code — met volledige documentatie.",
       "about.label":"// Over","about.title":"MST AlgoQuant",
       "about.p1":"Ik ben een onafhankelijke MQL-ontwikkelaar gespecialiseerd in algoritmische handelssystemen voor MetaTrader. Elk project wordt from scratch gebouwd, schoon en goed gedocumenteerd.",
       "about.p2":"Of u nu een complete strategie of alleen een idee heeft — ik vertaal het naar betrouwbare, geteste code die werkt in live markten.",
       "stat1":"Platform Ondersteuning","stat2":"Platform Ondersteuning","stat3":"Talen","stat4":"Aangepaste Code",
       "contact.label":"// Neem Contact Op","contact.title":"Laten We Samenwerken",
-      "contact.desc":"Heeft u een project in gedachten? Neem contact op via het formulier of vind mij op sociale media.",
-      "contact.soon":"Binnenkort beschikbaar",
+      "contact.desc":"Heeft u een project? Gebruik het formulier of neem contact op via sociale media.",
+      "contact.soon":"Binnenkort","contact.writeUs":"Stuur een bericht",
       "form.name":"Uw Naam","form.email":"Uw E-mail","form.subject":"Onderwerp",
-      "form.select":"Selecteer een dienst...","form.other":"Anders","form.message":"Bericht","form.send":"Verstuur Bericht",
-      "form.sending":"Verzenden...","form.ok":"✓ Bericht verzonden! Ik neem snel contact op.","form.err":"Er is iets misgegaan. Stuur een directe e-mail."
+      "form.select":"Selecteer een dienst...","form.other":"Anders","form.message":"Bericht","form.send":"Verstuur",
+      "form.sending":"Verzenden...","form.ok":"✓ Bericht verzonden! Ik neem snel contact op.","form.err":"Er is iets misgegaan. Probeer opnieuw."
     },
     de:{
       "nav.services":"Leistungen","nav.about":"Über mich","nav.contact":"Kontakt",
@@ -439,64 +430,60 @@
       "hero.cta1":"Angebot Anfordern","hero.cta2":"Leistungen Ansehen",
       "services.label":"// Was Ich Entwickle","services.title":"Leistungen",
       "s1.title":"Expert Advisor (EA)","s1.desc":"Vollautomatische Handelsbots für MT4/MT5. Benutzerdefinierte Logik, Risikomanagement und Multi-Paar-Unterstützung.",
-      "s2.title":"Benutzerdefinierte Indikatoren","s2.desc":"Maßgeschneiderte Indikatoren für Ihre Strategie. Oszillatoren, Overlays, Signalbenachrichtigungen und Dashboard-Panels.",
+      "s2.title":"Benutzerdefinierte Indikatoren","s2.desc":"Maßgeschneiderte Indikatoren. Oszillatoren, Overlays, Signalbenachrichtigungen und Panels.",
       "s3.title":"Strategie-Beratung","s3.desc":"Verwandeln Sie Ihre Handelsidee in einen backtesteten Algorithmus. Vom Konzept bis zum Code.",
       "about.label":"// Über Mich","about.title":"MST AlgoQuant",
       "about.p1":"Ich bin ein unabhängiger MQL-Entwickler spezialisiert auf algorithmische Handelssysteme für MetaTrader. Jedes Projekt wird von Grund auf neu und gut dokumentiert erstellt.",
       "about.p2":"Ob vollständige Strategie oder nur eine Idee — ich übersetze sie in zuverlässigen, getesteten Code.",
       "stat1":"Plattform-Support","stat2":"Plattform-Support","stat3":"Sprachen","stat4":"Eigener Code",
-      "contact.label":"// Kontakt Aufnehmen","contact.title":"Lass Uns Zusammenarbeiten",
-      "contact.desc":"Haben Sie ein Projekt? Schreiben Sie mir über das Formular oder auf Social Media.",
-      "contact.soon":"Demnächst verfügbar",
+      "contact.label":"// Kontakt","contact.title":"Zusammenarbeiten",
+      "contact.desc":"Haben Sie ein Projekt? Nutzen Sie das Formular oder kontaktieren Sie mich über Social Media.",
+      "contact.soon":"Demnächst","contact.writeUs":"Nachricht senden",
       "form.name":"Ihr Name","form.email":"Ihre E-Mail","form.subject":"Betreff",
-      "form.select":"Leistung auswählen...","form.other":"Sonstiges","form.message":"Nachricht","form.send":"Nachricht Senden",
-      "form.sending":"Wird gesendet...","form.ok":"✓ Nachricht gesendet! Ich melde mich bald.","form.err":"Etwas ist schiefgelaufen. Bitte senden Sie eine direkte E-Mail."
+      "form.select":"Leistung auswählen...","form.other":"Sonstiges","form.message":"Nachricht","form.send":"Senden",
+      "form.sending":"Wird gesendet...","form.ok":"✓ Nachricht gesendet! Ich melde mich bald.","form.err":"Fehler. Bitte erneut versuchen."
     },
     fr:{
       "nav.services":"Services","nav.about":"À propos","nav.contact":"Contact",
       "hero.label":"// MQL4 · MQL5 · Développement MetaTrader",
       "hero.line1":"Systèmes de","hero.line2":"Trading","hero.line3":"Algorithmique.",
-      "hero.sub":"Expert Advisors, indicateurs et stratégies de trading sur mesure — développés avec précision pour MetaTrader 4 & 5.",
+      "hero.sub":"Expert Advisors, indicateurs et stratégies sur mesure — développés avec précision pour MetaTrader 4 & 5.",
       "hero.cta1":"Demander un Devis","hero.cta2":"Voir les Services",
       "services.label":"// Ce Que Je Développe","services.title":"Services",
       "s1.title":"Expert Advisor (EA)","s1.desc":"Robots de trading entièrement automatisés pour MT4/MT5. Logique personnalisée, gestion des risques et support multi-paires.",
-      "s2.title":"Indicateurs Personnalisés","s2.desc":"Indicateurs techniques sur mesure. Oscillateurs, overlays, alertes et panneaux de tableau de bord.",
-      "s3.title":"Conseil en Stratégie","s3.desc":"Transformez votre idée en algorithme backtesté et optimisé. Du concept au code — avec documentation.",
+      "s2.title":"Indicateurs Personnalisés","s2.desc":"Indicateurs sur mesure. Oscillateurs, overlays, alertes et panneaux de tableau de bord.",
+      "s3.title":"Conseil en Stratégie","s3.desc":"Transformez votre idée en algorithme optimisé. Du concept au code — avec documentation.",
       "about.label":"// À Propos","about.title":"MST AlgoQuant",
       "about.p1":"Je suis un développeur MQL indépendant spécialisé dans les systèmes de trading algorithmique pour MetaTrader. Chaque projet est construit from scratch, propre et bien documenté.",
-      "about.p2":"Que vous ayez une stratégie complète ou juste une idée — je la traduis en code fiable qui fonctionne sur les marchés réels.",
+      "about.p2":"Stratégie complète ou simple idée — je la traduis en code fiable qui fonctionne sur les marchés réels.",
       "stat1":"Support Plateforme","stat2":"Support Plateforme","stat3":"Langues","stat4":"Code Personnalisé",
-      "contact.label":"// Prendre Contact","contact.title":"Travaillons Ensemble",
-      "contact.desc":"Vous avez un projet ? Contactez-moi via le formulaire ou sur les réseaux sociaux.",
-      "contact.soon":"Bientôt disponible",
+      "contact.label":"// Contact","contact.title":"Travaillons Ensemble",
+      "contact.desc":"Un projet en tête ? Utilisez le formulaire ou contactez-moi sur les réseaux sociaux.",
+      "contact.soon":"Bientôt","contact.writeUs":"Nous écrire",
       "form.name":"Votre Nom","form.email":"Votre E-mail","form.subject":"Sujet",
-      "form.select":"Choisir un service...","form.other":"Autre","form.message":"Message","form.send":"Envoyer le Message",
-      "form.sending":"Envoi en cours...","form.ok":"✓ Message envoyé ! Je vous répondrai bientôt.","form.err":"Une erreur est survenue. Veuillez envoyer un e-mail directement."
+      "form.select":"Choisir un service...","form.other":"Autre","form.message":"Message","form.send":"Envoyer",
+      "form.sending":"Envoi...","form.ok":"✓ Message envoyé ! Je vous répondrai bientôt.","form.err":"Une erreur est survenue. Réessayez."
     }
   };
 
   const pageTitles={en:'MST AlgoQuant — MQL4 & MQL5 Expert Advisor Developer | MetaTrader',tr:'MST AlgoQuant — MQL4 & MQL5 Expert Advisor Geliştirici | MetaTrader',nl:'MST AlgoQuant — MQL4 & MQL5 Expert Advisor Ontwikkelaar | MetaTrader',de:'MST AlgoQuant — MQL4 & MQL5 Expert Advisor Entwickler | MetaTrader',fr:'MST AlgoQuant — Développeur Expert Advisor MQL4 & MQL5 | MetaTrader'};
-  const pageDescs={en:'Custom Expert Advisors, MQL4/MQL5 indicators and algorithmic trading strategies for MetaTrader 4 & 5.',tr:'MetaTrader 4 ve 5 için özel Expert Advisor ve algoritmik ticaret stratejileri.',nl:'Aangepaste Expert Advisors en MQL4/MQL5 indicatoren voor MetaTrader.',de:'Individuelle Expert Advisors und MQL4/MQL5 Indikatoren für MetaTrader.',fr:'Expert Advisors et indicateurs MQL4/MQL5 pour MetaTrader 4 & 5.'};
+  const pageDescs={en:'Custom Expert Advisors, MQL4/MQL5 indicators and algorithmic trading strategies for MetaTrader 4 & 5.',tr:'MetaTrader 4 ve 5 için özel Expert Advisor ve algoritmik ticaret stratejileri.',nl:'Aangepaste Expert Advisors en indicatoren voor MetaTrader.',de:'Individuelle Expert Advisors und Indikatoren für MetaTrader.',fr:'Expert Advisors et indicateurs pour MetaTrader 4 & 5.'};
 
-  let currentLang = 'en';
+  let currentLang='en';
 
   function detectLang(){const c=(navigator.language||'en').slice(0,2).toLowerCase();return['tr','en','nl','de','fr'].includes(c)?c:'en';}
 
   function applyLang(lang){
-    currentLang = lang;
+    currentLang=lang;
     const dict=i18n[lang]||i18n.en;
-    document.querySelectorAll('[data-i18n]').forEach(el=>{
-      const k=el.getAttribute('data-i18n');
-      if(dict[k]) el.textContent=dict[k];
-    });
+    document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.getAttribute('data-i18n');if(dict[k])el.textContent=dict[k];});
     document.querySelectorAll('.lang-btn').forEach(btn=>btn.classList.toggle('active',btn.dataset.lang===lang));
     document.documentElement.lang=lang;
     document.title=pageTitles[lang]||pageTitles.en;
     const md=document.querySelector('meta[name="description"]');
-    if(md) md.setAttribute('content',pageDescs[lang]||pageDescs.en);
+    if(md)md.setAttribute('content',pageDescs[lang]||pageDescs.en);
   }
 
-  /* ── CONTACT FORM via Formspree ── */
   document.addEventListener('DOMContentLoaded',()=>{
     const saved=localStorage.getItem('mst_lang')||detectLang();
     applyLang(saved);
@@ -505,60 +492,44 @@
       btn.addEventListener('click',()=>{localStorage.setItem('mst_lang',btn.dataset.lang);applyLang(btn.dataset.lang);});
     });
 
+    // Smooth scroll for nav links
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{
-        const target=a.getAttribute('href');
-        if(target==='#top'){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});}
-        else{e.preventDefault();document.querySelector(target)?.scrollIntoView({behavior:'smooth'});}
+        const t=a.getAttribute('href');
+        if(t==='#top'){e.preventDefault();window.scrollTo({top:0,behavior:'smooth'});}
+        else{e.preventDefault();document.querySelector(t)?.scrollIntoView({behavior:'smooth'});}
       });
     });
 
-    /* FORM SUBMIT */
-    document.getElementById('btn-send').addEventListener('click', async()=>{
-      const dict=i18n[currentLang]||i18n.en;
-      const honey=document.getElementById('f-honey').value;
-      if(honey) return; // spam bot yakalandı
+    // Email card → scroll to form
+    const emailCard=document.getElementById('email-card');
+    emailCard.addEventListener('click',()=>{
+      document.getElementById('contact-form').scrollIntoView({behavior:'smooth',block:'start'});
+      setTimeout(()=>document.getElementById('f-name').focus(),600);
+    });
+    emailCard.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')emailCard.click();});
 
+    // FORM SUBMIT via Formspree
+    document.getElementById('btn-send').addEventListener('click',async()=>{
+      const dict=i18n[currentLang]||i18n.en;
+      if(document.getElementById('f-honey').value)return;
       const name=document.getElementById('f-name').value.trim();
       const email=document.getElementById('f-email').value.trim();
       const subject=document.getElementById('f-subject').value;
       const message=document.getElementById('f-message').value.trim();
       const status=document.getElementById('form-status');
       const btn=document.getElementById('btn-send');
-
-      if(!name||!email||!message){
-        status.textContent='⚠ Please fill in all required fields.';
-        status.className='form-status error';
-        return;
-      }
-
-      btn.textContent=dict['form.sending']||'Sending...';
-      btn.disabled=true;
-      status.textContent='';
-      status.className='form-status';
-
+      if(!name||!email||!message){status.textContent='⚠ '+( currentLang==='tr'?'Lütfen tüm alanları doldurun.':'Please fill in all required fields.');status.className='form-status error';return;}
+      btn.textContent=dict['form.sending'];btn.disabled=true;status.textContent='';status.className='form-status';
       try{
-        const res=await fetch('https://formspree.io/f/xpwzgkvd',{
-          method:'POST',
-          headers:{'Content-Type':'application/json','Accept':'application/json'},
-          body:JSON.stringify({name,email,subject,message,_language:currentLang})
-        });
+        const res=await fetch('https://formspree.io/f/xpwzgkvd',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name,email,subject,message,_language:currentLang})});
         if(res.ok){
-          status.textContent=dict['form.ok']||'✓ Message sent!';
-          status.className='form-status success';
-          document.getElementById('f-name').value='';
-          document.getElementById('f-email').value='';
-          document.getElementById('f-subject').value='';
-          document.getElementById('f-message').value='';
-        } else {
-          throw new Error('fail');
-        }
-      } catch(e){
-        status.textContent=dict['form.err']||'Something went wrong.';
-        status.className='form-status error';
-      }
-      btn.textContent=dict['form.send']||'Send Message';
-      btn.disabled=false;
+          status.textContent=dict['form.ok'];status.className='form-status success';
+          document.getElementById('f-name').value='';document.getElementById('f-email').value='';
+          document.getElementById('f-subject').value='';document.getElementById('f-message').value='';
+        }else throw new Error();
+      }catch(e){status.textContent=dict['form.err'];status.className='form-status error';}
+      btn.textContent=dict['form.send'];btn.disabled=false;
     });
   });
 </script>
