@@ -530,7 +530,7 @@
       if(!name||!email||!message){status.textContent='⚠ '+( currentLang==='tr'?'Lütfen tüm alanları doldurun.':'Please fill in all required fields.');status.className='form-status error';return;}
       btn.textContent=dict['form.sending'];btn.disabled=true;status.textContent='';status.className='form-status';
       try{
-        const res=await fetch('https://formspree.io/f/xpwzgkvd',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name,email,subject,message,_language:currentLang})});
+        const res=await fetch('https://formspree.io/f/xlgpjvoj',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({name,email,subject,message,_language:currentLang})});
         if(res.ok){
           status.textContent=dict['form.ok'];status.className='form-status success';
           document.getElementById('f-name').value='';document.getElementById('f-email').value='';
