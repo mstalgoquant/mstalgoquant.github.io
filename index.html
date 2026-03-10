@@ -125,19 +125,32 @@
       z-index: 0;
     }
 
+    /* CONTAINER */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
     /* NAV */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 100;
+      padding: 0;
+      background: rgba(6,10,16,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 1.2rem 3rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(6,10,16,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
     }
 
     .logo {
@@ -198,9 +211,15 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 8rem 3rem 4rem;
+      padding: 8rem 0 4rem;
       z-index: 1;
     }
+
+    .hero .container {
+      padding: 0 3rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
 
     .hero-label {
       font-family: 'Space Mono', monospace;
@@ -312,7 +331,15 @@
     section {
       position: relative;
       z-index: 1;
-      padding: 6rem 3rem;
+      padding: 6rem 0;
+    }
+
+    section > *:not(.container) {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 3rem;
+      padding-right: 3rem;
     }
 
     .section-label {
@@ -494,7 +521,10 @@
       position: relative;
       z-index: 1;
       border-top: 1px solid var(--border);
-      padding: 2rem 3rem;
+      padding: 0;
+    }
+
+    footer .nav-inner {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -521,13 +551,15 @@
 
     /* RESPONSIVE */
     @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
+      .nav-inner { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
-      .hero { padding: 7rem 1.5rem 3rem; }
+      .hero { padding: 7rem 0 3rem; }
+      .hero .container { padding: 0 1.5rem; }
       .ticker { display: none; }
-      section { padding: 4rem 1.5rem; }
+      section { padding: 4rem 0; }
+      .container { padding-left: 1.5rem; padding-right: 1.5rem; }
       .about-inner { grid-template-columns: 1fr; gap: 3rem; }
-      footer { flex-direction: column; gap: 1rem; text-align: center; }
+      footer .nav-inner { flex-direction: column; gap: 1rem; text-align: center; }
     }
   </style>
 </head>
@@ -535,6 +567,7 @@
 
 <!-- NAV -->
 <nav>
+  <div class="nav-inner">
   <div class="logo">MST <span>AlgoQuant</span></div>
   <ul class="nav-links">
     <li><a href="#services" data-i18n="nav.services">Services</a></li>
@@ -548,10 +581,12 @@
     <button class="lang-btn" data-lang="de">DE</button>
     <button class="lang-btn" data-lang="fr">FR</button>
   </div>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
+  <div class="container" style="position:relative;">
   <p class="hero-label" data-i18n="hero.label">// MQL4 · MQL5 · MetaTrader Development</p>
   <h1 aria-label="MST AlgoQuant — MQL4 MQL5 Expert Advisor and Algorithmic Trading Systems Developer">
     <span data-i18n="hero.line1">Algorithmic</span><br>
@@ -578,10 +613,12 @@
       <div class="ticker-val" style="color:#00ff88">● AVAILABLE</div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
+  <div class="container">
   <p class="section-label" data-i18n="services.label">// What I Build</p>
   <h2 class="section-title" data-i18n="services.title">Services</h2>
   <div class="services-grid">
@@ -601,10 +638,12 @@
       <p class="service-desc" data-i18n="s3.desc">Turn your trading idea into a backtested, optimized algorithm. From concept to code — with full documentation.</p>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" style="background: var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <div class="container">
   <div class="about-inner">
     <div class="about-text">
       <p class="section-label" data-i18n="about.label">// About</p>
@@ -640,10 +679,12 @@
       </div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
+  <div class="container">
   <div class="contact-inner">
     <p class="section-label" data-i18n="contact.label">// Get In Touch</p>
     <h2 class="section-title" data-i18n="contact.title">Let's Work Together</h2>
@@ -663,12 +704,15 @@
       </div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
+  <div class="nav-inner">
   <div class="logo">MST <span>AlgoQuant</span></div>
   <div class="footer-copy">© 2025 MST AlgoQuant. All rights reserved.</div>
+  </div>
 </footer>
 
 <!-- SEO: Hidden structured keyword content for crawlers -->
