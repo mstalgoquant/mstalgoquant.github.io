@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -69,7 +70,7 @@
     .hero .wrap{display:flex;align-items:center;justify-content:space-between;gap:4rem;width:100%;}
     .hero-left{flex:1;}
     .hero-label{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.4rem;opacity:0;animation:fadeUp 0.8s 0.2s forwards;}
-    .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(3.2rem,7vw,6.5rem);line-height:0.95;letter-spacing:-0.03em;margin-bottom:1.8rem;opacity:0;animation:fadeUp 0.8s 0.4s forwards;}
+    .hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(2.4rem,7vw,6.5rem);line-height:0.95;letter-spacing:-0.03em;margin-bottom:1.8rem;opacity:0;animation:fadeUp 0.8s 0.4s forwards;word-break:break-word;overflow-wrap:break-word;}
     .hero h1 .accent{color:var(--accent);}
     .hero h1 .accent2{color:var(--accent2);}
     .hero-sub{font-size:1rem;color:var(--muted);max-width:500px;line-height:1.75;margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.8s 0.6s forwards;}
@@ -169,12 +170,15 @@
       .social-row{grid-template-columns:1fr;}
       .form-row{grid-template-columns:1fr;}
       footer .wrap{flex-direction:column;gap:1rem;text-align:center;}
+      .hero h1{font-size:clamp(2rem,10vw,3.5rem);line-height:1.0;}
     }
   </style>
+
 </head>
 <body>
 
 <!-- NAV -->
+
 <nav>
   <div class="wrap">
     <a href="#top" class="logo">MST <span>AlgoQuant</span></a>
@@ -194,6 +198,7 @@
 </nav>
 
 <!-- HERO -->
+
 <section class="hero" id="top">
   <div class="wrap">
     <div class="hero-left">
@@ -218,6 +223,7 @@
 </section>
 
 <!-- SERVICES -->
+
 <section id="services">
   <div class="wrap">
     <p class="section-label" data-i18n="services.label">// What I Build</p>
@@ -243,6 +249,7 @@
 </section>
 
 <!-- ABOUT -->
+
 <section id="about">
   <div class="wrap">
     <div class="about-inner">
@@ -269,6 +276,7 @@
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact">
   <div class="wrap">
     <div class="contact-inner">
@@ -276,83 +284,87 @@
       <h2 class="section-title" data-i18n="contact.title">Let's Work Together</h2>
       <p class="contact-desc" data-i18n="contact.desc">Have a project in mind? Use the form below or reach out on social media.</p>
 
-      <!-- 3 SOCIAL CARDS -->
-      <div class="social-row">
+```
+  <!-- 3 SOCIAL CARDS -->
+  <div class="social-row">
 
-        <!-- EMAIL → form'a scroll -->
-        <div class="social-card" id="email-card" role="button" tabindex="0">
-          <div class="social-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-          </div>
-          <div>
-            <div class="social-card-label">E-mail</div>
-            <div class="social-card-val" data-i18n="contact.writeUs">Write to us</div>
-          </div>
-        </div>
-
-        <!-- TELEGRAM -->
-        <a href="https://t.me/mstalgoquant" target="_blank" class="social-card" id="tg-card">
-          <div class="social-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M21.4 2.3L2.1 9.7c-1.2.5-1.2 1.7-.2 2l4.8 1.5 1.9 5.7c.3.8 1 .9 1.5.4l2.7-2.5 5.3 3.9c1 .7 1.9.3 2.2-.9l3.5-15.5c.4-1.5-.5-2.3-1.4-1.9z"/></svg>
-          </div>
-          <div>
-            <div class="social-card-label">Telegram</div>
-            <div class="social-card-val">@mstalgoquant</div>
-          </div>
-        </a>
-
-        <!-- INSTAGRAM -->
-        <a href="https://instagram.com/mstalgoquant" target="_blank" class="social-card" id="ig-card">
-          <div class="social-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="var(--accent)"/></svg>
-          </div>
-          <div>
-            <div class="social-card-label">Instagram</div>
-            <div class="social-card-val">@mstalgoquant</div>
-          </div>
-        </a>
-
+    <!-- EMAIL → form'a scroll -->
+    <div class="social-card" id="email-card" role="button" tabindex="0">
+      <div class="social-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
       </div>
-
-      <!-- CONTACT FORM -->
-      <div class="contact-form" id="contact-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label data-i18n="form.name">Your Name</label>
-            <input type="text" id="f-name" autocomplete="name" />
-          </div>
-          <div class="form-group">
-            <label data-i18n="form.email">Your Email</label>
-            <input type="email" id="f-email" autocomplete="email" />
-          </div>
-        </div>
-        <div class="form-group">
-          <label data-i18n="form.subject">Subject</label>
-          <select id="f-subject">
-            <option value="" data-i18n="form.select">Select a service...</option>
-            <option value="Expert Advisor (EA) Development" data-i18n="s1.title">Expert Advisor (EA)</option>
-            <option value="Custom Indicator Development" data-i18n="s2.title">Custom Indicators</option>
-            <option value="Strategy Consulting" data-i18n="s3.title">Strategy Consulting</option>
-            <option value="Other" data-i18n="form.other">Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label data-i18n="form.message">Message</label>
-          <textarea id="f-message"></textarea>
-        </div>
-        <!-- HONEYPOT spam koruması -->
-        <div class="form-honeypot" aria-hidden="true">
-          <input type="text" id="f-honey" tabindex="-1" autocomplete="off" />
-        </div>
-        <button class="btn-send" id="btn-send" data-i18n="form.send">Send Message</button>
-        <div class="form-status" id="form-status"></div>
+      <div>
+        <div class="social-card-label">E-mail</div>
+        <div class="social-card-val" data-i18n="contact.writeUs">Write to us</div>
       </div>
-
     </div>
+
+    <!-- TELEGRAM -->
+    <a href="https://t.me/mstalgoquant" target="_blank" class="social-card" id="tg-card">
+      <div class="social-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M21.4 2.3L2.1 9.7c-1.2.5-1.2 1.7-.2 2l4.8 1.5 1.9 5.7c.3.8 1 .9 1.5.4l2.7-2.5 5.3 3.9c1 .7 1.9.3 2.2-.9l3.5-15.5c.4-1.5-.5-2.3-1.4-1.9z"/></svg>
+      </div>
+      <div>
+        <div class="social-card-label">Telegram</div>
+        <div class="social-card-val">@mstalgoquant</div>
+      </div>
+    </a>
+
+    <!-- INSTAGRAM -->
+    <a href="https://instagram.com/mstalgoquant" target="_blank" class="social-card" id="ig-card">
+      <div class="social-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="var(--accent)"/></svg>
+      </div>
+      <div>
+        <div class="social-card-label">Instagram</div>
+        <div class="social-card-val">@mstalgoquant</div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div class="contact-form" id="contact-form">
+    <div class="form-row">
+      <div class="form-group">
+        <label data-i18n="form.name">Your Name</label>
+        <input type="text" id="f-name" autocomplete="name" />
+      </div>
+      <div class="form-group">
+        <label data-i18n="form.email">Your Email</label>
+        <input type="email" id="f-email" autocomplete="email" />
+      </div>
+    </div>
+    <div class="form-group">
+      <label data-i18n="form.subject">Subject</label>
+      <select id="f-subject">
+        <option value="" data-i18n="form.select">Select a service...</option>
+        <option value="Expert Advisor (EA) Development" data-i18n="s1.title">Expert Advisor (EA)</option>
+        <option value="Custom Indicator Development" data-i18n="s2.title">Custom Indicators</option>
+        <option value="Strategy Consulting" data-i18n="s3.title">Strategy Consulting</option>
+        <option value="Other" data-i18n="form.other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label data-i18n="form.message">Message</label>
+      <textarea id="f-message"></textarea>
+    </div>
+    <!-- HONEYPOT spam koruması -->
+    <div class="form-honeypot" aria-hidden="true">
+      <input type="text" id="f-honey" tabindex="-1" autocomplete="off" />
+    </div>
+    <button class="btn-send" id="btn-send" data-i18n="form.send">Send Message</button>
+    <div class="form-status" id="form-status"></div>
+  </div>
+
+</div>
+```
+
   </div>
 </section>
 
 <!-- FOOTER -->
+
 <footer>
   <div class="wrap">
     <a href="#top" class="logo">MST <span>AlgoQuant</span></a>
@@ -541,5 +553,6 @@
     });
   });
 </script>
+
 </body>
 </html>
