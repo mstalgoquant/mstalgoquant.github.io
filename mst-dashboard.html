@@ -105,13 +105,21 @@
       footer .wrap{flex-direction:column;gap:1rem;text-align:center;}
     }
   </style>
+  <script src="lang.js"></script>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
     <a href="index.html" class="logo">MST <span>AlgoQuant</span></a>
-    <a href="shop.html" class="nav-back">← Back to Shop</a>
+    <a href="shop.html" class="nav-back" data-i18n="nav.back">← Back to Shop</a>
+    <div class="lang-switcher" style="display:flex;gap:0.35rem;">
+      <button class="lang-btn" data-lang="tr" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">TR</button>
+      <button class="lang-btn" data-lang="en" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">EN</button>
+      <button class="lang-btn" data-lang="nl" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">NL</button>
+      <button class="lang-btn" data-lang="de" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">DE</button>
+      <button class="lang-btn" data-lang="fr" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">FR</button>
+    </div>
   </div>
 </nav>
 
@@ -125,30 +133,30 @@
       <span>/</span>
       MST Dashboard v1.0
     </div>
-    <div class="product-badge">FREE INDICATOR</div>
-    <h1 class="product-title">MST Dashboard v1.0</h1>
-    <p class="product-subtitle">A clean, real-time multi-indicator dashboard for MetaTrader 4 & 5. RSI + Moving Average trend + ATR volatility — all in one panel with a combined signal score.</p>
+    <div class="product-badge" data-i18n="dash.badge">FREE INDICATOR</div>
+    <h1 class="product-title" data-i18n="dash.title">MST Dashboard v1.0</h1>
+    <p class="product-subtitle" data-i18n="dash.sub">A clean, real-time multi-indicator dashboard for MetaTrader 4 & 5. RSI + Moving Average trend + ATR volatility — all in one panel with a combined signal score.</p>
     <div class="product-meta">
       <div class="meta-item">
-        <span class="meta-label">Price</span>
-        <span class="meta-val free">FREE</span>
+        <span class="meta-label" data-i18n="dash.price.label">Price</span>
+        <span class="meta-val free" data-i18n="dash.price.val">FREE</span>
       </div>
       <div class="meta-item">
-        <span class="meta-label">Platform</span>
-        <span class="meta-val">MT4 + MT5</span>
+        <span class="meta-label" data-i18n="dash.platform.label">Platform</span>
+        <span class="meta-val" data-i18n="dash.platform.val">MT4 + MT5</span>
       </div>
       <div class="meta-item">
-        <span class="meta-label">Language</span>
-        <span class="meta-val">MQL4 / MQL5</span>
+        <span class="meta-label" data-i18n="dash.lang.label">Language</span>
+        <span class="meta-val" data-i18n="dash.lang.val">MQL4 / MQL5</span>
       </div>
       <div class="meta-item">
-        <span class="meta-label">Version</span>
-        <span class="meta-val">1.0</span>
+        <span class="meta-label" data-i18n="dash.ver.label">Version</span>
+        <span class="meta-val" data-i18n="dash.ver.val">1.0</span>
       </div>
     </div>
     <div class="product-actions">
-      <a href="mailto:mstalgoquant@gmail.com?subject=MST Dashboard v1.0 - Download Request&body=Hello, I would like to download MST Dashboard v1.0. Platform: (MT4/MT5)" class="btn-primary">📥 Request Free Download</a>
-      <a href="index.html#contact" class="btn-secondary">Ask a Question</a>
+      <a href="/cdn-cgi/l/email-protection#79140a0d18151e16080c18170d391e14181015571a1614460a0c1b131c1a0d44342a2d593d180a111b16180b1d590f4857495954593d160e171516181d592b1c080c1c0a0d5f1b161d0044311c151516555930590e160c151d591510121c590d16591d160e171516181d59342a2d593d180a111b16180b1d590f48574957592915180d1f160b14435951342d4d56342d4c50" class="btn-primary" data-i18n="dash.download">📥 Request Free Download</a>
+      <a href="index.html#contact" class="btn-secondary" data-i18n="dash.ask">Ask a Question</a>
     </div>
   </div>
 </div>
@@ -171,27 +179,27 @@
 <!-- FEATURES -->
 <section id="features">
   <div class="wrap">
-    <p class="section-label">// What's Inside</p>
-    <h2 class="section-title">Features</h2>
+    <p class="section-label" data-i18n="dash.features.label">// What's Inside</p>
+    <h2 class="section-title" data-i18n="dash.features.title">Features</h2>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon">// RSI MODULE</div>
-        <h3 class="feature-title">RSI Overbought / Oversold</h3>
+        <div class="feature-icon" data-i18n="dash.f1.tag">// RSI MODULE</div>
+        <h3 class="feature-title" data-i18n="dash.f1.title">RSI Overbought / Oversold</h3>
         <p class="feature-desc">Displays the current RSI value with color-coded feedback. Green when oversold (potential buy), red when overbought (potential sell). Configurable levels (default 70/30).</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">// MA MODULE</div>
-        <h3 class="feature-title">Moving Average Trend</h3>
+        <div class="feature-icon" data-i18n="dash.f2.tag">// MA MODULE</div>
+        <h3 class="feature-title" data-i18n="dash.f2.title">Moving Average Trend</h3>
         <p class="feature-desc">Compares Fast EMA vs Slow EMA and current price position. Outputs: Strong Bull, Bullish, Bearish, Strong Bear or Ranging — always with clear color coding.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">// ATR MODULE</div>
-        <h3 class="feature-title">ATR Volatility Reading</h3>
+        <div class="feature-icon" data-i18n="dash.f3.tag">// ATR MODULE</div>
+        <h3 class="feature-title" data-i18n="dash.f3.title">ATR Volatility Reading</h3>
         <p class="feature-desc">Shows the current Average True Range value so you can gauge market volatility at a glance. Useful for position sizing and stop-loss placement.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon">// SIGNAL MODULE</div>
-        <h3 class="feature-title">Combined BUY / SELL Score</h3>
+        <div class="feature-icon" data-i18n="dash.f4.tag">// SIGNAL MODULE</div>
+        <h3 class="feature-title" data-i18n="dash.f4.title">Combined BUY / SELL Score</h3>
         <p class="feature-desc">Aggregates all signals into a single score. When RSI, MA trend and price action align — the panel shows a clear BUY or SELL signal in large text. No signal when mixed.</p>
       </div>
     </div>
@@ -201,22 +209,22 @@
 <!-- HOW IT WORKS -->
 <section id="how">
   <div class="wrap">
-    <p class="section-label">// Setup Guide</p>
-    <h2 class="section-title">How to Install</h2>
+    <p class="section-label" data-i18n="dash.how.label">// Setup Guide</p>
+    <h2 class="section-title" data-i18n="dash.how.title">How to Install</h2>
     <div class="steps">
       <div class="step">
         <div class="step-num">01</div>
-        <h3 class="step-title">Request the File</h3>
+        <h3 class="step-title" data-i18n="dash.s1.title">Request the File</h3>
         <p class="step-desc">Click "Request Free Download" and send us a quick email. We'll reply with the .mq4 or .mq5 source file within 24 hours.</p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
-        <h3 class="step-title">Compile in MetaEditor</h3>
+        <h3 class="step-title" data-i18n="dash.s2.title">Compile in MetaEditor</h3>
         <p class="step-desc">Open the file in MetaEditor (F4 in MT4/MT5), press Compile (F7). The indicator will appear in your Navigator panel automatically.</p>
       </div>
       <div class="step">
         <div class="step-num">03</div>
-        <h3 class="step-title">Drag to Chart</h3>
+        <h3 class="step-title" data-i18n="dash.s3.title">Drag to Chart</h3>
         <p class="step-desc">Drag the MST Dashboard from Navigator to any chart. Customize RSI period, MA periods and colors in the input settings. Done!</p>
       </div>
     </div>
@@ -226,8 +234,8 @@
 <!-- SPECS -->
 <section id="specs">
   <div class="wrap">
-    <p class="section-label">// Technical Details</p>
-    <h2 class="section-title">Specifications</h2>
+    <p class="section-label" data-i18n="dash.specs.label">// Technical Details</p>
+    <h2 class="section-title" data-i18n="dash.specs.title">Specifications</h2>
     <div class="specs-wrapper">
       <table class="specs-table">
         <tr><td>Indicator Type</td><td>Chart Overlay (Window 0)</td></tr>
@@ -253,19 +261,6 @@
 <section>
   <div class="wrap">
     <div class="cta-box">
-      <h2 class="cta-title">Get MST Dashboard for Free</h2>
+      <h2 class="cta-title" data-i18n="dash.cta.title">Get MST Dashboard for Free</h2>
       <p class="cta-desc">Send us a quick email and we'll reply with the source file for MT4 and/or MT5.<br>No registration required.</p>
-      <a href="mailto:mstalgoquant@gmail.com?subject=MST Dashboard v1.0 - Download Request&body=Hello, I would like to download MST Dashboard v1.0. Platform: (MT4/MT5)" class="btn-primary">📥 Request Free Download</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <a href="index.html" class="logo">MST <span>AlgoQuant</span></a>
-    <div class="footer-copy">© 2025 MST AlgoQuant. All rights reserved.</div>
-  </div>
-</footer>
-
-</body>
-</html>
+      <a href="/cdn-cgi/l/email-protection#402d3334212c272f3135212e3400272d21292c6e232f2d7f3335222a2523347d0d13146004213328222f2132246036716e70606d60042f372e2c2f2124601225313525333466222f24397d08252c2c2f6c600960372f352c24602c292b2560342f60242f372e2c2f2124600d13146004213328222f2132246036716e706e601

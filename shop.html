@@ -26,6 +26,7 @@
     .nav-links{display:flex;gap:2rem;list-style:none;}
     .nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
     .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .lang-btn:hover,.lang-btn.active{border-color:var(--accent)!important;color:var(--accent)!important;background:rgba(0,229,255,0.06)!important;}
 
     .page-hero{position:relative;z-index:1;padding:8rem 0 4rem;}
     .section-label{font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.7rem;}
@@ -78,6 +79,7 @@
       footer .wrap{flex-direction:column;gap:1rem;text-align:center;}
     }
   </style>
+  <script src="lang.js"></script>
 </head>
 <body>
 
@@ -91,20 +93,27 @@
       <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
+    <div class="lang-switcher" style="display:flex;gap:0.35rem;">
+      <button class="lang-btn" data-lang="tr" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">TR</button>
+      <button class="lang-btn" data-lang="en" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">EN</button>
+      <button class="lang-btn" data-lang="nl" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">NL</button>
+      <button class="lang-btn" data-lang="de" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">DE</button>
+      <button class="lang-btn" data-lang="fr" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">FR</button>
+    </div>
   </div>
 </nav>
 
 <div class="page-hero">
   <div class="wrap">
-    <p class="section-label">// Ready to Use</p>
-    <h1 class="page-title">Shop</h1>
-    <p class="page-sub">Free and premium MQL4/MQL5 indicators and tools for MetaTrader 4 & 5 — built by MST AlgoQuant.</p>
+    <p class="section-label" data-i18n="shop.label">// Ready to Use</p>
+    <h1 class="page-title" data-i18n="shop.title">Shop</h1>
+    <p class="page-sub" data-i18n="shop.sub">Free and premium MQL4/MQL5 indicators and tools for MetaTrader 4 & 5 — built by MST AlgoQuant.</p>
 
     <div class="filter-row">
-      <button class="filter-btn active">All</button>
-      <button class="filter-btn">Indicators</button>
-      <button class="filter-btn">Expert Advisors</button>
-      <button class="filter-btn">Free</button>
+      <button class="filter-btn active" data-i18n="shop.filter.all">All</button>
+      <button class="filter-btn" data-i18n="shop.filter.ind">Indicators</button>
+      <button class="filter-btn" data-i18n="shop.filter.ea">Expert Advisors</button>
+      <button class="filter-btn" data-i18n="shop.filter.free">Free</button>
     </div>
   </div>
 </div>
@@ -118,7 +127,7 @@
       <div class="product-body">
         <div class="product-header">
           <span class="product-type">Indicator</span>
-          <span class="product-price-badge price-free">FREE</span>
+          <span class="product-price-badge price-free" data-i18n="shop.free">FREE</span>
         </div>
         <h2 class="product-name">MST Dashboard v1.0</h2>
         <p class="product-desc">Multi-indicator dashboard panel — RSI, MA Trend and ATR volatility in one clean overlay with combined signal scoring.</p>
@@ -130,7 +139,7 @@
           <span class="ptag">EMA</span>
           <span class="ptag">ATR</span>
         </div>
-        <a href="mst-dashboard.html" class="product-link">View Details →</a>
+        <a href="mst-dashboard.html" class="product-link" data-i18n="shop.view">View Details →</a>
       </div>
     </div>
 
@@ -138,7 +147,7 @@
     <div class="product-card product-card--soon">
       <div class="soon-body">
         <div class="soon-icon">+</div>
-        <p class="soon-text">New indicator coming soon...</p>
+        <p class="soon-text" data-i18n="shop.soon1">New indicator coming soon...</p>
       </div>
     </div>
 
@@ -146,7 +155,7 @@
     <div class="product-card product-card--soon">
       <div class="soon-body">
         <div class="soon-icon">+</div>
-        <p class="soon-text">Expert Advisor coming soon...</p>
+        <p class="soon-text" data-i18n="shop.soon2">Expert Advisor coming soon...</p>
       </div>
     </div>
 
@@ -156,7 +165,7 @@
 <footer>
   <div class="wrap">
     <a href="index.html" class="logo">MST <span>AlgoQuant</span></a>
-    <div class="footer-copy">© 2025 MST AlgoQuant. All rights reserved.</div>
+    <div class="footer-copy" data-i18n="footer.copy">© 2025 MST AlgoQuant. All rights reserved.</div>
   </div>
 </footer>
 
@@ -168,5 +177,6 @@
     });
   });
 </script>
+<script>document.addEventListener("DOMContentLoaded",()=>{mstInitLang("shop");});</script>
 </body>
 </html>

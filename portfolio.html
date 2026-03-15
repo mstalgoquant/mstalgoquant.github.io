@@ -26,6 +26,7 @@
     .nav-links{display:flex;gap:2rem;list-style:none;}
     .nav-links a{color:var(--muted);text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s;}
     .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .lang-btn:hover,.lang-btn.active{border-color:var(--accent)!important;color:var(--accent)!important;background:rgba(0,229,255,0.06)!important;}
 
     .page-hero{position:relative;z-index:1;padding:8rem 0 4rem;}
     .section-label{font-family:'Space Mono',monospace;font-size:0.68rem;color:var(--accent);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.7rem;}
@@ -78,6 +79,7 @@
       footer .wrap{flex-direction:column;gap:1rem;text-align:center;}
     }
   </style>
+  <script src="lang.js"></script>
 </head>
 <body>
 
@@ -89,16 +91,23 @@
       <li><a href="portfolio.html" class="active">Portfolio</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="index.html#about">About</a></li>
-      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
     </ul>
+    <div class="lang-switcher" style="display:flex;gap:0.35rem;">
+      <button class="lang-btn" data-lang="tr" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">TR</button>
+      <button class="lang-btn" data-lang="en" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">EN</button>
+      <button class="lang-btn" data-lang="nl" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">NL</button>
+      <button class="lang-btn" data-lang="de" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">DE</button>
+      <button class="lang-btn" data-lang="fr" style="background:none;border:1px solid #1a2a40;color:#5a7a9a;padding:0.28rem 0.65rem;font-size:0.72rem;font-family:'Space Mono',monospace;cursor:pointer;border-radius:3px;transition:all 0.2s;">FR</button>
+    </div>
   </div>
 </nav>
 
 <div class="page-hero">
   <div class="wrap">
-    <p class="section-label">// Past Work</p>
-    <h1 class="page-title">Portfolio</h1>
-    <p class="page-sub">A selection of MQL4/MQL5 projects — indicators, Expert Advisors and trading tools developed at MST AlgoQuant.</p>
+    <p class="section-label" data-i18n="portfolio.label">// Past Work</p>
+    <h1 class="page-title" data-i18n="portfolio.title">Portfolio</h1>
+    <p class="page-sub" data-i18n="portfolio.sub">A selection of MQL4/MQL5 projects — indicators, Expert Advisors and trading tools developed at MST AlgoQuant.</p>
   </div>
 </div>
 
@@ -110,11 +119,11 @@
       <img src="dashboard_mockup.png" alt="MST Dashboard v1.0" class="portfolio-thumb" />
       <div class="portfolio-body">
         <div class="portfolio-header">
-          <span class="portfolio-type">Indicator</span>
+          <span class="portfolio-type" data-i18n="port.tag1">Indicator</span>
           <span class="portfolio-year">2025</span>
         </div>
-        <h2 class="portfolio-name">MST Dashboard v1.0</h2>
-        <p class="portfolio-desc">Multi-indicator dashboard panel showing RSI, MA Trend and ATR volatility in a single overlay with combined BUY/SELL signal scoring. Available free for MT4 & MT5.</p>
+        <h2 class="portfolio-name" data-i18n="dash.title">MST Dashboard v1.0</h2>
+        <p class="portfolio-desc" data-i18n="port.desc1">Multi-indicator dashboard panel showing RSI, MA Trend and ATR volatility in a single overlay with combined BUY/SELL signal scoring. Available free for MT4 & MT5.</p>
         <div class="portfolio-tags">
           <span class="ptag">MQL4</span>
           <span class="ptag">MQL5</span>
@@ -123,7 +132,7 @@
           <span class="ptag">ATR</span>
           <span class="ptag">Dashboard</span>
         </div>
-        <a href="mst-dashboard.html" class="portfolio-link">View Details →</a>
+        <a href="mst-dashboard.html" class="portfolio-link" data-i18n="shop.view">View Details →</a>
       </div>
     </div>
 
@@ -150,10 +159,10 @@
   <div class="wrap">
     <div class="cta-box">
       <div class="cta-text">
-        <h3>Have a Project in Mind?</h3>
-        <p>Let's build your custom trading system from scratch.</p>
+        <h3 data-i18n="port.cta.title">Have a Project in Mind?</h3>
+        <p data-i18n="port.cta.desc">Let's build your custom trading system from scratch.</p>
       </div>
-      <a href="index.html#contact" class="btn-primary">Get a Quote →</a>
+      <a href="index.html#contact" class="btn-primary" data-i18n="port.cta.btn">Get a Quote →</a>
     </div>
   </div>
 </div>
@@ -161,9 +170,10 @@
 <footer>
   <div class="wrap">
     <a href="index.html" class="logo">MST <span>AlgoQuant</span></a>
-    <div class="footer-copy">© 2025 MST AlgoQuant. All rights reserved.</div>
+    <div class="footer-copy" data-i18n="footer.copy">© 2025 MST AlgoQuant. All rights reserved.</div>
   </div>
 </footer>
 
+<script>document.addEventListener("DOMContentLoaded",()=>{mstInitLang("portfolio");document.querySelectorAll("a[href^='#']").forEach(a=>{a.addEventListener("click",e=>{e.preventDefault();document.querySelector(a.getAttribute("href"))?.scrollIntoView({behavior:"smooth"});});});});</script>
 </body>
 </html>
